@@ -40,6 +40,7 @@ RUN git clone -b ${CLONE_TAG} --depth 1 https://github.com/BVLC/caffe.git . && \
 RUN pip install urllib3
 RUN pip install http
 RUN pip install httpserver
+RUN pip install flask
 
 ADD . /workspace/
 
@@ -47,5 +48,7 @@ ENV PYCAFFE_ROOT $CAFFE_ROOT/python
 ENV PYTHONPATH $PYCAFFE_ROOT:$PYTHONPATH
 ENV PATH $CAFFE_ROOT/build/tools:$PYCAFFE_ROOT:$PATH
 RUN echo "$CAFFE_ROOT/build/lib" >> /etc/ld.so.conf.d/caffe.conf && ldconfig
+
+ADD data_subset_rand /workspace/data_subset_rand
 
 WORKDIR /workspace
