@@ -26,8 +26,9 @@ def get_average_respone_time_from_urls():
 		totaltime+=roundtrip
 		try:
 			if float(r.data) < 0.2:
-				shutil.copyfile(files[i], '/home/advait/image_moderation/image-moderation-docker/supposedly_safe/'+files[i].split('/')[-1]) 
+				# shutil.copyfile(files[i], '/home/advait/image_moderation/image-moderation-docker/supposedly_safe/'+files[i].split('/')[-1]) 
 				# print("Safe")
+				pass
 			# print(float(r.data), '-->', roundtrip, 'seconds')
 		except Exception as e:
 			continue
