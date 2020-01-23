@@ -48,4 +48,5 @@ fabric.properties
 #Data
 /data
 /data_subset_rand
+/supposedly_safe
 .idea
